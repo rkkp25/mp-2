@@ -6,6 +6,7 @@ export default function JokeListContent() {
     const [jokes, setJokes] = useState<Joke[]>([]);
 
     useEffect(() => {
+        console.log("useeffect()")
         async function fetchData() {
             const res = await fetch(`https://official-joke-api.appspot.com/jokes/random/10`);
             const data = await res.json();
@@ -14,7 +15,7 @@ export default function JokeListContent() {
             //console.log("jokes1", jokes)
         }
       fetchData().then(()=>console.log("Okay")).catch(e => console.error("this went wrong" + e));
-    }, [jokes.length]);
+    }, []);
     //console.log(jokes)
 
     return (
