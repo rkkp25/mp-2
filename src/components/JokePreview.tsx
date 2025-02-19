@@ -15,11 +15,12 @@ const JokePreviewDiv = styled.div`
     justify-content: center;
 `;
 
-export function JokePreview (props: {data: Joke[]}) {
+export function JokePreview (temp: {data: Joke[]}) {
+    console.log("temps", temp)
     return (
         <ParentDiv>
         {
-            props.data.map((joke: Joke) =>
+            temp.data.map((joke: Joke) =>
                 <JokePreviewDiv>
                     <h2>Joke #{joke.id}</h2>
                     <p>{joke.setup}</p>
